@@ -1,6 +1,6 @@
 # Tour De Space
 
-![Screenshot](assets\readme.png)
+![Screenshot](assets/readme.png)
 
 A bullet hell game designed on top of Godot Engine. The game is inspired by Touhou Project and is a tribute to the series. The game is still in development and is not yet complete. The game is currently in not in a playable state as an exe but can be run using godot engine.
 
