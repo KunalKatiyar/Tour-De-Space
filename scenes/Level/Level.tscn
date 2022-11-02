@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/enivronment/Planet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Spawner/EnemySpawn.gd" type="Script" id=3]
+[ext_resource path="res://assets/VT323-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/Level/Level.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Game/Menu.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 4 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+margin_left = -359.0
+margin_top = -402.0
+margin_right = 1478.0
+margin_bottom = 884.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 61.0
+margin_top = 20.0
+margin_right = 1021.0
+margin_bottom = 660.0
+custom_fonts/font = SubResource( 1 )
+text = "SURVIVEEEEEEEEE"
+align = 1
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 524, 127 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -3.35449, -1.29578 )
+offset = Vector2( 530, 110 )
+zoom = Vector2( 0.7, 0.7 )
+
+[node name="Planet" parent="." instance=ExtResource( 1 )]
+position = Vector2( 520, 300 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Planet2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1015, -48 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="EnemySpawn" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="EnemySpawn"]
+
+[node name="Popup" parent="." instance=ExtResource( 6 )]
+margin_left = 295.0
+margin_top = 13.0
+margin_right = 795.0
+margin_bottom = 263.0
+
+[connection signal="timeout" from="EnemySpawn/Timer" to="EnemySpawn" method="timeout"]
