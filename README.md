@@ -45,6 +45,3 @@ Please make sure to update tests as appropriate.
 ## Authors and acknowledgment
 
 -   [KunalKatiyar](https://www.github.com/KunalKatiyar)
-
-## Project status
-
